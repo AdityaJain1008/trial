@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>     <head>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").slideToggle();
+    $("#div2").fadeTo("slow",0.5);
+    $("#div3").fadeIn(3000);
+  });        });
+</script>   </head>    <body>
+<p>Demonstrate fadeIn() with different parameters.</p>
+<button>Click to fade in boxes</button><br><br>
+<div id="div1" style="width:80px;height:80px;background-color:blue;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:yellow;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<script>
+  $(document).ready(function(){
+    $("#btn1").click(function(){
+      $("#box").animate({left: '250px'});
+      $("#box").animate({height: "200px",width:"200px"});
+      $("#box").animate({width: "100px",height:"100px"},1000);
+      $("#box").animate({width: "100px"});
+      $("#box").animate({left: '1px'});
+    });
+    
+  });
+  </script>
+  <button id="btn1">Animate height</button>
+  <button id="btn2">Reset height</button>
+  <div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;position:relative"></div>
+  <script>
+    $(document).ready(function(){
+      $("#btn5").click(function(){
+        console.log("Text: " + $("#test").text());    });
+      $("#btn6").click(function(){
+        console.log("HTML: " + $("#test").html());   });
+      $("#btn7").click(function(){
+        console.log("Value: " + $("input").val());
+      document.write( $("input").val())
+      });   });    </script>
+<form><input type="text"> hello</input>
+</form>
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+<button id="btn5">Show Text</button>
+<button id="btn6">Show HTML</button>
+<button id="btn7">Show value</button>
+<script>
+  $(document).ready(function(){
+    $("#btn1").click(function(){
+    $("p").replaceWith( "<h1>I am Replaced to say you hello!!!<h1>");
+     }) 
+    });
+   
+  </script>
+  <p>Click on the square below:</p>
+  <span id="result"></span>
+  <div id="division" style="background-color: blue; width: 60px;">
+    This is Blue Square!!</div>
+  <script>
+    $(document).ready(function(){
+      $("div").click(function(){
+        $(this).replaceWith("<h1>JQuery</h1>")
+      });
+      
+    });
+  </script>
+
+  <p>Click on any square below:</p>
+  <span id="result"></span>
+  <div class="div0" style ="background-color: blue; width: 60px; height: 10px;"></div>
+  <div class="div0" style ="background-color: green; width: 60px; height: 10px;"></div>
+  <div class="div0" style ="background-color: red; width: 60px; height: 10px;"></div>
+  <script>
+    $(document).ready(function(){
+      $("div").click(function(){
+        $(this).before('<div class="div0">Hi</div>');
+      });
+      
+    });
+  </script>
+</body>
+</html>
