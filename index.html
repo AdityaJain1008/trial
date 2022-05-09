@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a"></p>
+    <p id="demo">Hey!</p>
+    <!--<input type="number" value="num">-->
+    <script>
+        var x=7;
+        //document.write(typeof(x))
+        console.log(typeof(x));
+        var y= 'AX';
+        console.log(typeof(y));
+        console.log(16+'volvo');
+        var a;
+        console.log(a)
+        console.log(16+'4')
+        var x=50;
+        if (x>=40){
+            var b='Pass'
+            console.log(b);}
+        else{
+            var b= 'Fail';
+            console.log(b);
+        }
+        var x=3;
+        switch(x){
+            case 1:
+            let g='Monday'
+            console.log(g)
+            break;
+            case 2:
+            let h='Tuesday'
+            console.log(h)
+            break;
+            case 3:
+            let i='Wednesday'
+            console.log(i)
+            break;
+            default:
+                console.log('Sunday')
+        }
+        let n=4;
+        for (i=1;i<=10;i++){
+            console.log(i*n)
+        }
+        var arr;
+        arr=[1,3,6,8,4,8,3]
+        var sum=0;
+        for (let i in arr){
+            sum+=arr[i];
+        }
+        console.log(sum)
+        document.getElementById("a").innerHTML=sum;
+        // 10 March
+        //function constructor
+        const my = new Function("a", "b", "return a * b");
+        let xx = my(4, 3);
+        document.getElementById("a").innerHTML=xx;
+        //anonymous function
+        var x1= function(a,b) {return a*b}
+        var z= x1(4,5)
+        document.getElementById("a").innerHTML=z;
+        //self calling
+        (function product(a,b){
+            a=4; b=6;
+            var c= a*b
+            document.getElementById("a").innerHTML=c;
+        })()
+        /*var p= product(4,6)
+        document.getElementById("a").innerHTML=p;*/
+        // variable parameters
+        function multiply(multiplier, ...theArgs) {
+        return theArgs.map(x2 => multiplier * x2);}
+        var arr = multiply(2, 1, 2, 3);
+        console.log(arr); // [2, 4, 6]
+    // 14 march
+        // arrow functions
+        const x3 = (x3, y) => x3 * y;
+        console.log(x3(5,5))
+        
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let text = "<ul>";
+        fruits.forEach(myFunction);
+        text += "</ul>";
+        function myFunction(value) {
+        text += "<li>" + value + "</li>";
+        }
+    // 17 March
+        let age = prompt("What is your age?", 18);
+
+let welcome = (age < 18) ?
+  () => alert('Hello') :
+  () => {return (age)}; // ? : conditional operator
+    
+welcome();
+console.log(welcome())
+        // -----
+        function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+        }
+        ask( "Do u agree?",
+        ()=>alert("You agreed") ,
+        ()=>alert("You canclled the execution "));
+
+        // This binding
+        var x4 = 10;
+        function add(){
+            var x4 =20;
+            alert(x4);
+            alert(this.x4);
+        }(add());
+
+        //
+        hello = () => {
+             a=10;
+  document.getElementById("demo").innerHTML += this.a;
+}
+
+// The window object calls the function:
+window.addEventListener("load", hello);
+
+// A button object calls the function:
+//document.getElementById("btn").addEventListener("click", hello);
+
+
+var str = 'apple Red apple "orange" "green" avocado';
+
+var f= /^a/g;	//matches only at the beginning of the input
+console.log(str.match(f));
+var g= /o$/g;	//matches only at the end of the input
+console.log(str.match(g));
+var h= /\ba/g;	//matches only at a word boundary
+console.log(str.match(h)); //a(apple),a(apple), a(avocado
+var i= /\Bg/g;	//matches only not at a word boundary
+console.log(str.match(i)); //g (orange)
+
+    </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+  $("p").css("background-color","green");
+});
+$(document).ready(function(){
+  $(".intro").css("background-color","yellow");
+});
+$(document).ready(function(){
+  $("#123").css("background-color","red");
+});
+
+
+</script>
+<h1>Welcome to My Homepage</h1>
+<p class="intro">My name is Donald.</p>
+<p>I live in Duckburg.</p>
+
+<div class="intro">My name is Dolly.</div>
+<p id="123">I live in Duckburg.</p>
+
+</body>
+</html>
